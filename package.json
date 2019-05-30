@@ -9,7 +9,9 @@
     "gatsby-plugin-react-helmet": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-helmet": "latest"
+    "react-helmet": "latest",
+    "typeface-karla": "0.0.72",
+    "typeface-lora": "0.0.72"
   },
   "scripts": {
     "develop": "gatsby develop",

@@ -3,27 +3,19 @@ import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Box from '@material-ui/core/Box'
 import Link from '@material-ui/core/Link'
-import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 
-function MadeWithLove () {
+function Divider () {
+  const classes = useStyles()
   return (
-    <Typography variant='body2' color='textSecondary' align='center'>
-      {'Built with love by the '}
-      <Link color='inherit' href='https://material-ui.com/'>
-        Material-UI
-      </Link>
-      {' team.'}
-    </Typography>
+    <div className={classes.divider} />
   )
 }
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
-    borderBottom: `1px solid black`,
     marginTop: '55px'
   },
   toolbarTitle: {
@@ -33,8 +25,12 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     flexShrink: 0
   },
-  main: {
-    paddingTop: '90px'
+  divider: {
+    width: '100%',
+    borderBottom: `1px solid black`
+  },
+  about: {
+    padding: '80px 0'
   },
   footer: {
     marginTop: theme.spacing(8),
@@ -80,17 +76,32 @@ export default function Blog () {
             </Link>
             ))}
         </Toolbar>
-        <main className={classes.main}>
-          <Grid container direction='row' justify='center'>
-            <Grid item xs='12' sm='6' style={{border: '2px solid black'}}>
-              <p>skdjf</p>
-            </Grid>
-            <Grid item xs='12' sm='6' style={{border: '2px solid black'}}>
-              <p>skdjf</p>
-            </Grid>
+        <Divider />
+
+        <Grid container direction='row' justify='center' className={classes.about}>
+          <Grid item xs={12} sm={6}>
+            <img alt='profilePic' src='https://uploads-ssl.webflow.com/5a382927284c460001a09b30/5a3857d862014a00011814fc_Picture.jpg'
+              style={{width: '90%', filter: 'grayscale(100%)'}} />
           </Grid>
-        </main>
+          <Grid item xs={12} sm={6}>
+            <Typography>About me</Typography>
+            <Typography variant='h1'>I’m an interactive designer with more than 5 years of experience and a wide range of skills in the industry.</Typography>
+            <Typography>I’m an interactive designer with more than 5 years of experience and a wide range of skills in the industry</Typography>
+          </Grid>
+        </Grid>
+
+        <Divider />
+
+        <Grid container direction='row' className={classes.about}>
+          <Grid item xs={2}>
+            <Typography>Education</Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <Typography>About me</Typography>
+          </Grid>
+        </Grid>
       </Container>
+
       {/* Footer */}
       <footer className={classes.footer}>
         <Container maxWidth='lg'>
@@ -100,7 +111,6 @@ export default function Blog () {
           <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
             Something here to give the footer a purpose!
           </Typography>
-          <MadeWithLove />
         </Container>
       </footer>
       {/* End footer */}
