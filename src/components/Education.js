@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -22,9 +23,16 @@ export default function Education (props) {
 
   return (
     <div>
-      <Typography variant='h4' className={classes.degree}>Software Engineering, Statistics</Typography>
-      <Typography className={classes.dateRange}>September 2015 ─ Present</Typography>
-      <Typography className={classes.school}>UNSW</Typography>
+      <Typography variant='h4' className={classes.degree}>{props.degree}</Typography>
+      <Typography className={classes.dateRange}>{props.dateRange}</Typography>
+      <Typography className={classes.school}>{props.school}</Typography>
     </div>
   )
 }
+
+Education.propTypes = {
+  school: PropTypes.string.isRequired,
+  dateRange: PropTypes.string.isRequired,
+  degree: PropTypes.string.isRequired
+}
+

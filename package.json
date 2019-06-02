@@ -7,6 +7,7 @@
     "gatsby": "latest",
     "gatsby-plugin-material-ui": "latest",
     "gatsby-plugin-react-helmet": "latest",
+    "lodash": "^4.17.11",
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",

@@ -36,23 +36,23 @@ module.exports = {
       experience: [
         {
           title: 'Senior Web Designer, Webflow',
-          dateRage: 'September 2015 ─ Present',
+          dateRange: 'September 2015 ─ Present',
           summary: 'Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum.'
         },
         {
           title: 'Intern, Optiver',
-          dateRage: 'September 2015 ─ Present',
+          dateRange: 'September 2015 ─ Present',
           summary: 'Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum.'
         }
       ],
       skills: [
         {
           title: 'Algorithms',
-          description: 'Skill description - this will be an optional explanation of the skill'
+          summary: 'Skill summary - this will be an optional explanation of the skill'
         },
         {
           title: 'C++',
-          description: 'Skill description - this will be an optional explanation of the skill'
+          summary: 'Skill summary - this will be an optional explanation of the skill'
         }
       ],
       connect: [

@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
-  skill: {
+  title: {
     color: '#222228',
     margin: '0px'
   }
@@ -14,8 +15,17 @@ export default function Skill (props) {
 
   return (
     <div>
-      <Typography className={classes.skill}>Algorithms</Typography>
-      <Typography>Skill description - this will be an optional explanation of the skill</Typography>
+      <Typography className={classes.title}>{props.title}</Typography>
+      {props.summary !== null ?
+        <Typography>{props.summary}</Typography>
+        :
+        null
+      }
     </div>
   )
+}
+
+Skill.propTypes = {
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string
 }
