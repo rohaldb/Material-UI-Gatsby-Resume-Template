@@ -10,6 +10,7 @@ import Experience from '../components/Experience'
 import Education from '../components/Education'
 import Skill from '../components/Skill'
 import { SocialIcon } from 'react-social-icons'
+import { graphql } from 'gatsby'
 
 function Divider () {
   const classes = useStyles()
@@ -52,9 +53,9 @@ const sections = [
   'Contact'
 ]
 
-export default function Blog () {
+export default ({data}) => {
   const classes = useStyles()
-
+  console.log(data)
   return (
     <React.Fragment>
       <CssBaseline />
@@ -67,7 +68,7 @@ export default function Blog () {
             noWrap
             className={classes.toolbarTitle}
           >
-            Blog
+            {data.site.siteMetadata.resume.about.name}
           </Typography>
           {sections.map(section => (
             <Link
@@ -92,8 +93,8 @@ export default function Blog () {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography>About me</Typography>
-            <Typography variant='h1'>Engineer, Computer Scientist & Coding Wizard.</Typography>
-            <Typography>Ambitious and motivated 5th year Software Engineering and Mathematics student, driven by a passion for technology and application software. Experienced junior developer with a rare combination of quantitative skills and creative insights. As you can tell, I like making websites.</Typography>
+            <Typography variant='h1'>{data.site.siteMetadata.resume.about.title}</Typography>
+            <Typography>{data.site.siteMetadata.resume.about.summary}</Typography>
           </Grid>
         </Grid>
 
@@ -160,18 +161,15 @@ export default function Blog () {
 
         <Divider />
 
-        {/* Contact */}
+        {/* Connect */}
         <Grid container direction='row' className={classes.section}>
           <Grid item xs={3}>
-            <Typography>Socials</Typography>
+            <Typography>Connect</Typography>
           </Grid>
           <Grid item xs={9}>
-            <SocialIcon url='https://twitter.com/jaketrent' className={classes.icon} />
-            <SocialIcon url='http://linkedin.com/in/jaketrent' className={classes.icon} />
-            <SocialIcon url='http://tumblr.com' className={classes.icon} />
-            <SocialIcon url='http://youtube.com' className={classes.icon} />
-            <SocialIcon url='mailto:rohaldb@gmail.com' className={classes.icon} />
-            <SocialIcon url='tel:0433404267' network='whatsapp' className={classes.icon} />
+            {data.site.siteMetadata.resume.connect.map(x =>
+              <SocialIcon url={`${x}`} key={`${x}`} className={classes.icon} />)
+            }
           </Grid>
         </Grid>
 
@@ -191,3 +189,20 @@ export default function Blog () {
     </React.Fragment>
   )
 }
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        resume {
+          about {
+            name
+            title
+            summary
+          }
+          connect
+        }
+      }
+    }
+  }
+`
