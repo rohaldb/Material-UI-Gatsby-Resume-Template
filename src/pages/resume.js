@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
 import Skill from '../components/Skill'
+import { SocialIcon } from 'react-social-icons'
 
 function Divider () {
   const classes = useStyles()
@@ -35,8 +36,10 @@ const useStyles = makeStyles(theme => ({
   section: {
     padding: '80px 0'
   },
+  icon: {
+    margin: '0px 10px 10px 10px'
+  },
   footer: {
-    marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0)
   }
 }))
@@ -84,13 +87,13 @@ export default function Blog () {
 
         <Grid container direction='row' justify='center' className={classes.section}>
           <Grid item xs={12} sm={6}>
-            <img alt='profilePic' src='https://uploads-ssl.webflow.com/5a382927284c460001a09b30/5a3857d862014a00011814fc_Picture.jpg'
+            <img alt='profilePic' src='https://i.ibb.co/zxmcpch/IMG-5700-copy.jpg'
               style={{width: '90%', filter: 'grayscale(100%)'}} />
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography>About me</Typography>
-            <Typography variant='h1'>I’m an interactive designer with more than 5 years of experience and a wide range of skills in the industry.</Typography>
-            <Typography>I’m an interactive designer with more than 5 years of experience and a wide range of skills in the industry</Typography>
+            <Typography variant='h1'>Engineer, Computer Scientist & Coding Wizard.</Typography>
+            <Typography>Ambitious and motivated 5th year Software Engineering and Mathematics student, driven by a passion for technology and application software. Experienced junior developer with a rare combination of quantitative skills and creative insights. As you can tell, I like making websites.</Typography>
           </Grid>
         </Grid>
 
@@ -136,9 +139,7 @@ export default function Blog () {
 
         {/* Skills */}
         <Grid container direction='column' className={classes.section}>
-          <Grid item xs={12} style={{textAlign: 'center', marginBottom: '60px'}}>
-            <Typography variant='h1'>Skills & Abilities</Typography>
-          </Grid>
+          <Typography variant='h1' align='center' style={{ marginBottom: '60px'}} >Skills & Abilities</Typography>
           <Grid item xs={12}>
             <Grid container direction='row' spacing={4}>
               <Grid item xs={4}>
@@ -162,42 +163,31 @@ export default function Blog () {
         {/* Contact */}
         <Grid container direction='row' className={classes.section}>
           <Grid item xs={3}>
-            <Typography>Contact</Typography>
+            <Typography>Socials</Typography>
           </Grid>
           <Grid item xs={9}>
-            <Grid item xs={12}>
-              <Grid container direction='row' spacing={4}>
-                <Grid item xs={4}>
-                  <Skill />
-                </Grid>
-                <Grid item xs={4}>
-                  <Skill />
-                </Grid>
-                <Grid item xs={4}>
-                  <Skill />
-                </Grid>
-                <Grid item xs={4}>
-                  <Skill />
-                </Grid>
-              </Grid>
-            </Grid>
+            <SocialIcon url='https://twitter.com/jaketrent' className={classes.icon} />
+            <SocialIcon url='http://linkedin.com/in/jaketrent' className={classes.icon} />
+            <SocialIcon url='http://tumblr.com' className={classes.icon} />
+            <SocialIcon url='http://youtube.com' className={classes.icon} />
+            <SocialIcon url='mailto:rohaldb@gmail.com' className={classes.icon} />
+            <SocialIcon url='tel:0433404267' network='whatsapp' className={classes.icon} />
           </Grid>
         </Grid>
 
-      </Container>
+        <Divider />
 
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Container maxWidth='lg'>
-          <Typography variant='h6' align='center' gutterBottom>
-            Text
-          </Typography>
-          <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
-            Something here to give the footer a purpose!
-          </Typography>
-        </Container>
-      </footer>
-      {/* End footer */}
+        {/* Footer */}
+        <footer className={classes.footer}>
+          <Container maxWidth='lg'>
+            <Typography align='center'>
+              Designed with <span role='img' aria-label='heart'>❤️</span> by @rohaldb
+            </Typography>
+          </Container>
+        </footer>
+        {/* End footer */}
+
+      </Container>
     </React.Fragment>
   )
 }
