@@ -6,6 +6,9 @@ import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Experience from '../components/Experience'
+import Education from '../components/Education'
+import Skill from '../components/Skill'
 
 function Divider () {
   const classes = useStyles()
@@ -29,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     borderBottom: `1px solid black`
   },
-  about: {
+  section: {
     padding: '80px 0'
   },
   footer: {
@@ -52,7 +55,7 @@ export default function Blog () {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth='lg'>
+      <Container maxWidth='md'>
         <Toolbar className={classes.toolbar}>
           <Typography
             component='h2'
@@ -76,9 +79,10 @@ export default function Blog () {
             </Link>
             ))}
         </Toolbar>
+
         <Divider />
 
-        <Grid container direction='row' justify='center' className={classes.about}>
+        <Grid container direction='row' justify='center' className={classes.section}>
           <Grid item xs={12} sm={6}>
             <img alt='profilePic' src='https://uploads-ssl.webflow.com/5a382927284c460001a09b30/5a3857d862014a00011814fc_Picture.jpg'
               style={{width: '90%', filter: 'grayscale(100%)'}} />
@@ -92,21 +96,101 @@ export default function Blog () {
 
         <Divider />
 
-        <Grid container direction='row' className={classes.about}>
-          <Grid item xs={2}>
+        {/* Education */}
+        <Grid container direction='row' className={classes.section}>
+          <Grid item xs={3}>
             <Typography>Education</Typography>
           </Grid>
-          <Grid item xs={10}>
-            <Typography>About me</Typography>
+          <Grid item xs={9}>
+            <Grid container direction='row' spacing={4}>
+              <Grid item xs={6} sm={4}>
+                <Education />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Education />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
+
+        <Divider />
+
+        {/* Experience */}
+        <Grid container direction='row' className={classes.section}>
+          <Grid item xs={3}>
+            <Typography>Experience</Typography>
+          </Grid>
+          <Grid item xs={9}>
+            <Grid container direction='column' spacing={4}>
+              <Grid item>
+                <Experience />
+              </Grid>
+              <Grid item>
+                <Experience />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Divider />
+
+        {/* Skills */}
+        <Grid container direction='column' className={classes.section}>
+          <Grid item xs={12} style={{textAlign: 'center', marginBottom: '60px'}}>
+            <Typography variant='h1'>Skills & Abilities</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid container direction='row' spacing={4}>
+              <Grid item xs={4}>
+                <Skill />
+              </Grid>
+              <Grid item xs={4}>
+                <Skill />
+              </Grid>
+              <Grid item xs={4}>
+                <Skill />
+              </Grid>
+              <Grid item xs={4}>
+                <Skill />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Divider />
+
+        {/* Contact */}
+        <Grid container direction='row' className={classes.section}>
+          <Grid item xs={3}>
+            <Typography>Contact</Typography>
+          </Grid>
+          <Grid item xs={9}>
+            <Grid item xs={12}>
+              <Grid container direction='row' spacing={4}>
+                <Grid item xs={4}>
+                  <Skill />
+                </Grid>
+                <Grid item xs={4}>
+                  <Skill />
+                </Grid>
+                <Grid item xs={4}>
+                  <Skill />
+                </Grid>
+                <Grid item xs={4}>
+                  <Skill />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
       </Container>
 
       {/* Footer */}
       <footer className={classes.footer}>
         <Container maxWidth='lg'>
           <Typography variant='h6' align='center' gutterBottom>
-            Footer
+            Text
           </Typography>
           <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
             Something here to give the footer a purpose!
