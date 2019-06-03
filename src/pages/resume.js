@@ -38,14 +38,9 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     borderBottom: `1px solid black`
   },
-  section: {
-    padding: '80px 0'
-  },
-  icon: {
-    margin: '0px 10px 10px 10px'
-  },
-  footer: {
-    padding: theme.spacing(6, 0)
+  profilePic: {
+    width: '90%',
+    filter: 'grayscale(100%)'
   },
   downloadResume: {
     marginTop: theme.spacing(3),
@@ -57,6 +52,15 @@ const useStyles = makeStyles(theme => ({
       border: '1px solid black',
       color: 'black'
     }
+  },
+  section: {
+    padding: '80px 0'
+  },
+  icon: {
+    margin: '0px 10px 10px 10px'
+  },
+  footer: {
+    padding: theme.spacing(6, 0)
   }
 }))
 
@@ -90,7 +94,6 @@ export default ({data}) => {
               noWrap
               key={section}
               variant='body2'
-              href='#'
               className={classes.toolbarLink}
               href={`#${section}`}
               >
@@ -103,8 +106,7 @@ export default ({data}) => {
 
         <Grid container direction='row' justify='center' className={classes.section} id='About'>
           <Grid item xs={12} sm={6}>
-            <img alt='profilePic' src='https://i.ibb.co/zxmcpch/IMG-5700-copy.jpg'
-              style={{width: '90%', filter: 'grayscale(100%)'}} />
+            <img alt='profilePic' className={classes.profilePic} src='https://i.ibb.co/zxmcpch/IMG-5700-copy.jpg' />
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography>About me</Typography>
