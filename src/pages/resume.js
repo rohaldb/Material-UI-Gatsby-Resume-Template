@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
+import { Link, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Experience from '../components/Experience'
@@ -10,7 +10,6 @@ import Education from '../components/Education'
 import Skill from '../components/Skill'
 import { SocialIcon } from 'react-social-icons'
 import Button from '@material-ui/core/Button'
-import { graphql } from 'gatsby'
 import _ from 'lodash'
 import Navigation from '../components/Navigation'
 
@@ -54,7 +53,9 @@ const useStyles = makeStyles(theme => ({
 
 export default ({data}) => {
   const classes = useStyles()
-  console.log(data)
+
+  const posts = data.allMarkdownRemark.edges
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -153,12 +154,46 @@ export default ({data}) => {
         {/* End footer */}
 
       </Container>
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug
+        return (
+          <div key={node.fields.slug}>
+            <h3
+                >
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                {title}
+              </Link>
+            </h3>
+            <small>{node.frontmatter.date}</small>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: node.frontmatter.description || node.excerpt
+              }}
+                />
+          </div>
+        )
+      })}
     </React.Fragment>
   )
 }
 
 export const query = graphql`
   query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         resume {
