@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
@@ -13,6 +12,7 @@ import { SocialIcon } from 'react-social-icons'
 import Button from '@material-ui/core/Button'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
+import Navigation from '../components/Navigation'
 
 function Divider () {
   const classes = useStyles()
@@ -22,18 +22,6 @@ function Divider () {
 }
 
 const useStyles = makeStyles(theme => ({
-  toolbar: {
-    marginTop: '55px'
-  },
-  toolbarTitle: {
-    flex: 1
-  },
-  toolbarLink: {
-    flexShrink: 0,
-    fontSize: '13.75px',
-    fontWeight: '500',
-    padding: '20px'
-  },
   divider: {
     width: '100%',
     borderBottom: `1px solid black`
@@ -64,14 +52,6 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const sections = [
-  'About',
-  'Education',
-  'Experience',
-  'Skills',
-  'Connect'
-]
-
 export default ({data}) => {
   const classes = useStyles()
   console.log(data)
@@ -79,29 +59,7 @@ export default ({data}) => {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth='md'>
-        <Toolbar className={classes.toolbar}>
-          <Typography
-            variant='h1'
-            color='inherit'
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            {data.site.siteMetadata.resume.about.name}
-          </Typography>
-          {sections.map(section => (
-            <Link
-              color='inherit'
-              noWrap
-              key={section}
-              variant='body2'
-              className={classes.toolbarLink}
-              href={`#${section}`}
-              >
-              {section}
-            </Link>
-            ))}
-        </Toolbar>
-
+        <Navigation />
         <Divider />
 
         <Grid container direction='row' justify='center' className={classes.section} id='About'>
