@@ -68,3 +68,8 @@ Ready to deploy? See these resources to get going
 - [Using Github Pages with Gatsby](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/) - My preferred method
 - [GoDaddy Domain with GitHub Pages
 ](https://medium.com/@JinnaBalu/godaddy-domain-with-github-pages-62aed906d4ef)
+
+## Coming soon
+
+An extension with markdown blog capabilities is partially done (see `blog` branch). Feel free to contribute!
+
