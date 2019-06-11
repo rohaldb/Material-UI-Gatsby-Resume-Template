@@ -51,7 +51,11 @@ module.exports = {
           summary: 'Skill summary - this will be an optional explanation of the skill'
         },
         {
-          title: 'C++',
+          title: 'C, C++',
+          summary: 'Skill summary - this will be an optional explanation of the skill'
+        },
+        {
+          title: 'Shell/Bash',
           summary: 'Skill summary - this will be an optional explanation of the skill'
         }
       ],

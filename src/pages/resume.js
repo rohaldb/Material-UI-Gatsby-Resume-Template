@@ -2,8 +2,6 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
-import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
@@ -12,7 +10,11 @@ import { SocialIcon } from 'react-social-icons'
 import Button from '@material-ui/core/Button'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
+import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
+import Container from '@material-ui/core/Container'
+import Resume from '../../content/Resume.pdf'
+import Profile from '../../content/Profile.jpg'
 
 function Divider () {
   const classes = useStyles()
@@ -28,6 +30,9 @@ const useStyles = makeStyles(theme => ({
   },
   profilePic: {
     width: '90%',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%'
+    },
     filter: 'grayscale(100%)'
   },
   downloadResume: {
@@ -47,14 +52,14 @@ const useStyles = makeStyles(theme => ({
   icon: {
     margin: '0px 10px 10px 10px'
   },
-  footer: {
-    padding: theme.spacing(6, 0)
+  skillsTitle: {
+    marginBottom: '60px'
   }
 }))
 
 export default ({data}) => {
   const classes = useStyles()
-  console.log(data)
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -64,13 +69,13 @@ export default ({data}) => {
 
         <Grid container direction='row' justify='center' className={classes.section} id='About'>
           <Grid item xs={12} sm={6}>
-            <img alt='profilePic' className={classes.profilePic} src='https://i.ibb.co/zxmcpch/IMG-5700-copy.jpg' />
+            <img alt='profilePic' className={classes.profilePic} src={Profile} />
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography>About me</Typography>
             <Typography variant='h1'>{data.site.siteMetadata.resume.about.title}</Typography>
             <Typography>{data.site.siteMetadata.resume.about.summary}</Typography>
-            <Button size='large' className={classes.downloadResume}>Download Resume</Button>
+            <Button size='large' href={Resume} target='_blank' className={classes.downloadResume}>Download Resume</Button>
           </Grid>
         </Grid>
 
@@ -114,11 +119,11 @@ export default ({data}) => {
 
         {/* Skills */}
         <Grid container direction='column' className={classes.section} id='Skills'>
-          <Typography variant='h1' align='center' style={{ marginBottom: '60px'}} >Skills & Abilities</Typography>
+          <Typography variant='h1' align='center' className={classes.skillsTitle} >Skills & Abilities</Typography>
           <Grid item xs={12}>
             <Grid container direction='row' spacing={4}>
               {_.map(data.site.siteMetadata.resume.skills, (skill, i) => (
-                <Grid item xs={4} key={i}>
+                <Grid item xs={6} sm={4} key={i}>
                   <Skill title={skill.title} summary={skill.summary} />
                 </Grid>
               ))}
@@ -142,16 +147,7 @@ export default ({data}) => {
 
         <Divider />
 
-        {/* Footer */}
-        <footer className={classes.footer}>
-          <Container maxWidth='lg'>
-            <Typography align='center'>
-              Designed with <span role='img' aria-label='heart'>❤️</span> by @rohaldb
-            </Typography>
-          </Container>
-        </footer>
-        {/* End footer */}
-
+        <Footer />
       </Container>
     </React.Fragment>
   )

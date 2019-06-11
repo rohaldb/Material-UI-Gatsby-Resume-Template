@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
   toolbarLink: {
     flexShrink: 0,
     fontSize: '13.75px',
-    fontWeight: '500',
     padding: '20px'
   },
   sectionDesktop: {
