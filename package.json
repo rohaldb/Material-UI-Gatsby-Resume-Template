@@ -20,9 +20,11 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "react-social-icons": "^4.1.0"
   }
 }
