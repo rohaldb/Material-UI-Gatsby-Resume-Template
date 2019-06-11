@@ -1,8 +1,10 @@
 # Material-UI Gatsby Resume Template
 
-A [Material-UI](https://material-ui.com/) [Gatsby](https://www.gatsbyjs.org) resume website (websume) template. Checkout the [demo](https://www.benrohald.com).
+A [Material-UI](https://material-ui.com/) [Gatsby](https://www.gatsbyjs.org) resume website (websume) template. Checkout the [demo](https://www.benrohald.com). Thanks to Gatsby's data importing methods, you **don't need to write a single line of code to get this running**, and can be live in under 5 minutes. 
 
 ## How to use
+
+Begin by cloning the master branch.
 
 ### Content
 
@@ -47,7 +49,7 @@ The `connect` section takes in a list of urls and automatically renders the appr
 
 Replace these with your own, making sure your new files have the same names.
 
-When youre done, run the following to run it the site locally.
+When youre done, run the following to run it the site locally. Voilà! 
 
 ```sh
 npm install
