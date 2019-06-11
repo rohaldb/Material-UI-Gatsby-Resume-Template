@@ -73,3 +73,4 @@ Ready to deploy? See these resources to get going
 
 An extension with markdown blog capabilities is partially done (see `blog` branch). Feel free to contribute!
 
+sdfgsfxgaef
