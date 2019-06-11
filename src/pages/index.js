@@ -13,8 +13,9 @@ import _ from 'lodash'
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
 import Container from '@material-ui/core/Container'
-import Resume from '../../content/Resume.pdf'
-import Profile from '../../content/Profile.jpg'
+import Resume from '../assets/Resume.pdf'
+import Profile from '../assets/Profile.jpg'
+import { Helmet } from 'react-helmet'
 
 function Divider () {
   const classes = useStyles()
@@ -62,6 +63,11 @@ export default ({data}) => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>{data.site.siteMetadata.resume.about.name}'s Resume</title>
+        <link rel='canonical' href='http://mysite.com/example' />
+      </Helmet>
       <CssBaseline />
       <Container maxWidth='md'>
         <Navigation />

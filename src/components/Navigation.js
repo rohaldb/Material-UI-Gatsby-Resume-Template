@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
 import MoreIcon from '@material-ui/icons/MoreVert'
 import Link from '@material-ui/core/Link'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -44,6 +45,22 @@ const useStyles = makeStyles(theme => ({
 export default function Navigation () {
   const classes = useStyles()
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
+
+  const data = useStaticQuery(
+    graphql`
+    query {
+      site {
+        siteMetadata {
+          resume {
+            about {
+              name
+            }
+          }
+        }
+      }
+    }
+    `
+  )
 
   const sections = [
     'About',
@@ -102,7 +119,7 @@ export default function Navigation () {
           noWrap
           className={classes.toolbarTitle}
       >
-          Ben Rohald
+          {data.site.siteMetadata.resume.about.name}
         </Typography>
         <div className={classes.grow} />
         <div className={classes.sectionDesktop}>
