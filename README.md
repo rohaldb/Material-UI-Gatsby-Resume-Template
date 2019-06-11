@@ -1,4 +1,4 @@
-# Gatsby Resume Template
+# Material-UI Gatsby Resume Template
 
 A [Material-UI](https://material-ui.com/) [Gatsby](https://www.gatsbyjs.org) resume website (websume) template. Checkout the [demo](https://www.benrohald.com).
 
@@ -6,7 +6,7 @@ A [Material-UI](https://material-ui.com/) [Gatsby](https://www.gatsbyjs.org) res
 
 ### Content
 
-Inside of `gatsby-config.js` you'll find a `resume` js object nested inside of `siteMetadata`. Simply update this object to reflect the content from your resume and the content will be loaded automatically.
+Inside of `gatsby-config.js` you'll find a `resume` js object nested inside of `siteMetadata`. Simply update this object to reflect the content from your resume and it will be loaded automatically.
 
 Here is a sample of what it could look like:
 ```js
