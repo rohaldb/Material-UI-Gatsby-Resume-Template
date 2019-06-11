@@ -4,7 +4,11 @@ A [Material-UI](https://material-ui.com/) [Gatsby](https://www.gatsbyjs.org) res
 
 ## How to use
 
-Begin by cloning the master branch.
+Begin by cloning the master branch and [installing gatsby](https://www.gatsbyjs.org/docs/quick-start/)
+
+```sh
+npm install -g gatsby-cli
+```
 
 ### Content
 
