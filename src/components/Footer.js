@@ -17,7 +17,7 @@ export default function Footer (props) {
     <footer className={classes.footer}>
       <Container maxWidth='lg'>
         <Typography align='center'>
-          Designed with <span role='img' aria-label='heart'>❤️</span> by <Link href={'http://www.benrohald.com'}>@rohaldb</Link>
+          Made with <span role='img' aria-label='heart'>❤️</span> by <Link href={'http://www.benrohald.com'}>@rohaldb</Link>
         </Typography>
       </Container>
     </footer>
