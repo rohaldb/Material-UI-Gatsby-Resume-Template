@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
 import Skill from '../components/Skill'
+import Proud from '../components/Proud'
 import { SocialIcon } from 'react-social-icons'
 import Button from '@material-ui/core/Button'
 import { graphql } from 'gatsby'
@@ -139,6 +140,24 @@ export default ({data}) => {
 
         <Divider />
 
+        {/* Proud */}
+        <Grid container direction='row' className={classes.section} id='Experience'>
+          <Grid item xs={3}>
+            <Typography>Things I'm Proud Of</Typography>
+          </Grid>
+          <Grid item xs={9}>
+            <Grid container direction='column' spacing={4}>
+              {_.map(data.site.siteMetadata.resume.proud, (proud, i) => (
+                <Grid item key={i}>
+                  <Proud title={proud.title} summary={proud.summary} link={proud.link} />
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Divider />
+
         {/* Connect */}
         <Grid container direction='row' className={classes.section} id='Connect'>
           <Grid item xs={3}>
@@ -177,6 +196,11 @@ export const query = graphql`
           connect
           skills {
             title
+            summary
+          }
+          proud {
+            title
+            link
             summary
           }
           about {

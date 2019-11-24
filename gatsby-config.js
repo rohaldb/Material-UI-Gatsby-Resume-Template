@@ -110,6 +110,33 @@ module.exports = {
           summary: 'Back end'
         }
       ],
+      proud: [
+        {
+          title: 'My Undergraduate Thesis',
+          link: 'https://pdfhost.io/v/swmrkJGg_Asymmetric_Learned_Similarity_Search_Ben_Rohaldpdf.pdf',
+          summary: 'An exploration of how asymmetric class labels effects learning to hash method.s'
+        },
+        {
+          title: 'Locality Sensitive Hashing, Explained',
+          summary: 'An in-depth, intuitive explanation of how locality sensitive hashing (LSH) works.',
+          link: 'https://rohaldbuni.github.io/locality-sensitive-hashing/'
+        },
+        {
+          title: 'Super Save',
+          summary: 'An Atom package that displays a motivational message whenever you save.',
+          link: 'https://atom.io/packages/super-save'
+        },
+        {
+          title: 'The Virtues Of Applying To Be A Developer',
+          summary: 'A guide through the software developer interview process.',
+          link: 'https://medium.com/@rohaldb/the-virtues-of-applying-to-be-a-developer-8044e3ec105'
+        },
+        {
+          title: 'Neural Networks, Demystified',
+          summary: 'A 10 minute primer on how neural networks work, designed for people who know nothing about computer science, coding, or mathematics.',
+          link: 'https://towardsdatascience.com/neural-networks-demystified-49f3426d4478'
+        }
+      ],
       connect: [
         'https://www.linkedin.com/in/benjaminrohald/',
         'https://medium.com/@rohaldb',
